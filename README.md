@@ -7,11 +7,11 @@ Arduino KM (Keyboard + Mouse) Switch version 2.0 is now using USB Host Shield wi
 
 ## How to use:
 
-ScrollLock = switching from actual device to next in loop
-ScrollLock + F1 = First HID device
-ScrollLock + F2 = Second HID device
-ScrollLock + F3 = Third HID device
-ScrollLock + F4 = Fourth HID device
+- ScrollLock = switching from actual device to next in loop
+- ScrollLock + F1 = First HID device
+- ScrollLock + F2 = Second HID device
+- ScrollLock + F3 = Third HID device
+- ScrollLock + F4 = Fourth HID device
 
 Serial speed between Arduino DUE and Arduino Micro is 115200 Baud rate and 4bytes per reading.
 
