@@ -6,16 +6,19 @@
 
 bool debug = false;
 
+#define KEY_PRNT_SCRN 206 //if not defined in library
+#define KEY_PAUSE (76+136)
+
 #include <Keyboard.h>
 #include <Mouse.h>
 
 uint8_t VALUE1 = ' ';
-uint8_t VALUE2 = 0;
-uint8_t VALUE3 = 0;
-uint8_t VALUE4 = 0;
-uint8_t VALUE5 = 0;
+uint8_t VALUE2 = ' ';
+uint8_t VALUE3 = ' ';
+uint8_t VALUE4 = ' ';
+uint8_t VALUE5 = ' ';
 uint8_t VALUE6 = ' ';
-uint8_t VALUE7 = 0;
+uint8_t VALUE7 = ' ';
 
 byte tmp=0;
 
@@ -32,7 +35,7 @@ void loadKEYs() {
    uint8_t data[4]={0}; //Serial data buffer
 
    tmp=0;
-   while (!Serial1.available()) {/*Serial1.flush();*/ delayMicroseconds(100);} //wait for Serial ready
+   while (!Serial1.available()) {delayMicroseconds(100);} //wait for Serial ready
    while (Serial1.available() && tmp<4 ) {
       data[tmp]=Serial1.read();
       delayMicroseconds(100); //this is necessary
@@ -43,8 +46,8 @@ void loadKEYs() {
    }
    //linux FIX:
    while (Serial1.available() ) {
-      ///Serial1.flush();
-      Serial1.read();      
+      Serial1.read();
+      Serial1.flush();
       delayMicroseconds(100);
    }
    Serial1.flush();
@@ -81,8 +84,7 @@ void loadKEYs() {
 
    //if mouse data loaded then set Mouse Command
    if (VALUE2 || VALUE3 || VALUE4 || VALUE5) VALUE1='M';
-
-   
+    
 }
 //*****************************************************************************
 //*  MAIN SETUP
@@ -94,8 +96,8 @@ void setup() {
    Serial1.begin(115200); //for input
 
    //emulate Keyboard and Mouse
-   Mouse.begin();
    Keyboard.begin();
+   Mouse.begin();
 }
 //*****************************************************************************
 //*  MAIN LOOP
@@ -130,7 +132,7 @@ void loop() {
 //*****************************************************************************
 
    if (VALUE1 == 'M') {
-      if (VALUE3>0 || VALUE4>0 || VALUE5>0) Mouse.move(VALUE3, VALUE4, VALUE5);
+      Mouse.move(VALUE3, VALUE4, VALUE5);
   
       if (VALUE1 == 'M' && VALUE2 == 0) {
          Mouse.release(MOUSE_LEFT);
@@ -269,16 +271,20 @@ void loop() {
 
       //NUMBERS 0..9 (NUMPAD)
       if (NUMLOCK == true && VALUE6 == 'D' && VALUE7 >= 0x59 && VALUE7 <= 0x61) {
-         Keyboard.press(VALUE7 - 0x28);
+         ///Keyboard.press(VALUE7 - 0x28);
+         Keyboard.press(VALUE7 + 136);
       }
       if (NUMLOCK == true && VALUE6 == 'U' && VALUE7 >= 0x59 && VALUE7 <= 0x61) {
-         Keyboard.release(VALUE7 - 0x28);
+         ///Keyboard.release(VALUE7 - 0x28);
+         Keyboard.release(VALUE7 + 136);
       }
       if (NUMLOCK == true && VALUE6 == 'D' && VALUE7 == 0x62) {
-         Keyboard.press('0');
+         ///Keyboard.press('0');
+         Keyboard.press(VALUE7 + 136);
       }
       if (NUMLOCK == true && VALUE6 == 'U' && VALUE7 == 0x62) {
-         Keyboard.release('0');
+         ///Keyboard.release('0');
+         Keyboard.press(VALUE7 + 136);
       }
 
       //numpad no numlock
@@ -635,10 +641,10 @@ void loop() {
 
       //print screen
       if (VALUE6 == 'D' && VALUE7 == 0x46) {
-         Keyboard.press(206);
+         Keyboard.press(KEY_PRNT_SCRN);
       }
       if (VALUE6 == 'U' && VALUE7 == 0x46) {
-         Keyboard.release(206);
+         Keyboard.release(KEY_PRNT_SCRN);
       }
       //pause break
       if (VALUE6 == 'D' && VALUE7 == 0x48) {
