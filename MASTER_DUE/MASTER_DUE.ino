@@ -236,6 +236,13 @@ class myHID_processor : public UHS_HID_PROCESSOR {
                      VALUE4=(char)(data[3] ); //Y
                      VALUE5=(char)(data[4] ); //Z (scroll)
                   }
+                  if (length==8 && data[0]==1) { //Cooler Master Devastator 3 PLUS
+                     VALUE1='M';
+                     VALUE2=(char)(data[1] ); //click
+                     VALUE3=(char)(data[2] ); //X
+                     VALUE4=(char)(data[4] ); //Y
+                     VALUE5=(char)(data[6] ); //Z (scroll)
+                  }
                   if (length==9) { //Asus ROG SICA working
                      VALUE1='M';
 
