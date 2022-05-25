@@ -1,4 +1,4 @@
-![Image description](https://github.com/nathalis/Arduino-USB-KM-Switch-2.0/blob/master/KM_switch2_icon.png?raw=true)
+![Image description](https://github.com/JWGpro/Arduino-USB-KM-Switch-2.0/blob/master/KM_switch2_icon.png?raw=true)
 
 # Arduino-USB-KM-Switch-2.0
 
@@ -28,13 +28,13 @@ Serial speed between Arduino DUE and Arduino Micro is 115200 Baud rate and 4byte
 
 ## Schematic
 
-![Image description](https://github.com/nathalis/Arduino-USB-KM-Switch-2.0/blob/master/KM_STATION1.png?raw=true)
+![Image description](https://github.com/JWGpro/Arduino-USB-KM-Switch-2.0/blob/master/KM_STATION1.png?raw=true)
 
 ## Photos
 
-![Image description](https://github.com/nathalis/Arduino-USB-KM-Switch-2.0/blob/master/Photos/1.jpg?raw=true)
-![Image description](https://github.com/nathalis/Arduino-USB-KM-Switch-2.0/blob/master/Photos/2.jpg?raw=true)
-![Image description](https://github.com/nathalis/Arduino-USB-KM-Switch-2.0/blob/master/Photos/3.jpg?raw=true)
-![Image description](https://github.com/nathalis/Arduino-USB-KM-Switch-2.0/blob/master/Photos/4.jpg?raw=true)
-![Image description](https://github.com/nathalis/Arduino-USB-KM-Switch-2.0/blob/master/Photos/5.jpg?raw=true)
-![Image description](https://github.com/nathalis/Arduino-USB-KM-Switch-2.0/blob/master/Photos/6.jpg?raw=true)
+![Image description](https://github.com/JWGpro/Arduino-USB-KM-Switch-2.0/blob/master/Photos/1.jpg?raw=true)
+![Image description](https://github.com/JWGpro/Arduino-USB-KM-Switch-2.0/blob/master/Photos/2.jpg?raw=true)
+![Image description](https://github.com/JWGpro/Arduino-USB-KM-Switch-2.0/blob/master/Photos/3.jpg?raw=true)
+![Image description](https://github.com/JWGpro/Arduino-USB-KM-Switch-2.0/blob/master/Photos/4.jpg?raw=true)
+![Image description](https://github.com/JWGpro/Arduino-USB-KM-Switch-2.0/blob/master/Photos/5.jpg?raw=true)
+![Image description](https://github.com/JWGpro/Arduino-USB-KM-Switch-2.0/blob/master/Photos/6.jpg?raw=true)
