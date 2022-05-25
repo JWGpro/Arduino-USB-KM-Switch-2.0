@@ -2,7 +2,7 @@
 
 # Arduino-USB-KM-Switch-2.0
 
-*This is a fork of the [original repo by nathalis](https://github.com/nathalis/Arduino-USB-KM-Switch-2.0). It had been superceded by their repo Arduino-USB-KM-Switch-3.0, which used a different hardware configuration for wireless use.*
+*This is a fork dating from October 2021 of the [original repo by nathalis](https://github.com/nathalis/Arduino-USB-KM-Switch-2.0), before it was removed around May 2022. By that time the README had been updated to say that this repo was deprecated in favour of a newer one, Arduino-USB-KM-Switch-3.0, which used a different hardware configuration for wireless use.*
 
 Arduino KM (Keyboard + Mouse) Switch version 2.0 is now using USB Host Shield with MAX3421E, using Arduino DUE for better performance, it has 4 Hardware Serial Bus connected with Arduino Micro (Leonardo ATMEGA32U4). The configuration is set to support 4 HID devices in 1 hub (but I recommend only one Keyboard and Mouse, not for example: 2 Keyboards with 2 Mouses, but in many cases it will work). Main software Library is UHS30 (Pre-release of USB Host Library version 3.0). It is using HID RAW readings (and if you have a mouse not working, the solution is to map raw data from the mouse in source code, because I tested only 4 mouses and each has different RAW data and sensitivity).
 
